@@ -113,6 +113,11 @@ public class Form1 extends javax.swing.JFrame {
 
     private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
         // TODO add your handling code here:
+        //vai limpar a matricula e senha e voltar no matricula
+        tfLogin.setText(""); //limpa a matricula
+        tfSenha.setText(""); //limpa a senha 
+        
+        tfLogin.requestFocus(); //coloca o foco no login
     }//GEN-LAST:event_btCancelarActionPerformed
 
     private void tfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSenhaActionPerformed
