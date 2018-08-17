@@ -15,33 +15,36 @@ public class Usuario {
     private String matricula;
     private String senha;
 
-    public Usuario(String nome, String matricula, String senha) {
-        this.nome = "admin";
-        this.matricula = "AC2018";
-        this.senha = "s1234";
+    
+    public Usuario() {
+        nome = "Admin";
+        matricula = "AC2018";
+        senha = "s1234";
     }
     
-    	private String verificaSenha(String senha){
-		if(senha.length() == 5){
-			return "Senha Inválida Para o Usuário: ";
-		}
-		return "Senha Aceita Para o Usuário: ";
-	}
+    public boolean validarSenha(String senha)
+    {
+        if(senha.length() == 5 && !senha.isEmpty())
+            return true;
+        else
+            return false;
+    }
     
-        
-        private String verificaMatricula(String Matricula){
-		if(senha.length() < 6){
-			return "Matricula inválida para o Usuário: ";
-		}
-		return "Matricula Aceita Para o Usuário: ";
-	}
-        
-        private String efetuaLogin(String matricula, String senha){
-		if(matricula == this.matricula && senha == this.senha){
-			return "login efetuado com sucesso";
-		}
-		return "Senha incorreta ";
-	}
+    public boolean validarMatricula(String matricula)
+    {
+        if(matricula.length() == 6)
+            return true;
+        else
+            return false;
+    }
+    
+    public boolean efetuarLogin(String matricula, String senha)
+    {
+        if(this.matricula.equals(matricula) && this.senha.equals(senha))
+            return true;
+        else
+            return false;
+    }
     
     
 }
